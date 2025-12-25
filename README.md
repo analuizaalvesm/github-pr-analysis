@@ -1,12 +1,12 @@
-# 📝 Relatório Técnico: Caracterizando a Atividade de Code Review no GitHub
+# Relatório Técnico: Caracterizando a Atividade de Code Review no GitHub
 
 ## 1. Informações do grupo
 
-- **🎓 Curso:** Engenharia de Software
-- **📘 Disciplina:** Laboratório de Experimentação de Software
-- **🗓 Período:** 6° Período
-- **👨‍🏫 Professor(a):** Prof. Dr. João Paulo Carneiro Aramuni
-- **👥 Membros do Grupo:** Ana Luiza Machado Alves, Lucas Henrique Chaves de Barros, Raquel Inez de Almeida Calazans
+- **Curso:** Engenharia de Software
+- **Disciplina:** Laboratório de Experimentação de Software
+- **Período:** 6° Período
+- **Professor(a):** Prof. Dr. João Paulo Carneiro Aramuni
+- **Membros do Grupo:** Ana Luiza Machado Alves, Lucas Henrique Chaves de Barros, Raquel Inez de Almeida Calazans
 
 ---
 
@@ -18,7 +18,7 @@ O laboratório tem como objetivo analisar a atividade de code review desenvolvid
 
 As **Questões de Pesquisa** foram definidas para guiar a investigação e estruturar a análise dos dados coletados:
 
-#### 1. Feedback Final das Revisões (Status do PR):
+#### 2.1.1. Feedback Final das Revisões (Status do PR):
 
 | RQ       | Pergunta                                                                         |
 | -------- | -------------------------------------------------------------------------------- |
@@ -27,7 +27,7 @@ As **Questões de Pesquisa** foram definidas para guiar a investigação e estru
 | **RQ03** | Qual a relação entre a descrição dos PRs e o feedback final das revisões?        |
 | **RQ04** | Qual a relação entre as interações nos PRs e o feedback final das revisões?      |
 
-#### 2. Número de Revisões:
+#### 2.1.2. Número de Revisões:
 
 | RQ          | Pergunta                                                                      |
 | ----------- | ----------------------------------------------------------------------------- |
@@ -41,7 +41,7 @@ As **Questões de Pesquisa** foram definidas para guiar a investigação e estru
 
 As **Hipóteses Informais** foram elaboradas a partir das RQs, estabelecendo expectativas sobre os resultados esperados do estudo:
 
-#### 1. Feedback Final das Revisões (Status do PR)
+#### 2.2.1. Feedback Final das Revisões (Status do PR)
 
 | IH   | Descrição                                                                                                                                                                                             |
 | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -50,7 +50,7 @@ As **Hipóteses Informais** foram elaboradas a partir das RQs, estabelecendo exp
 | IH03 | PRs com descrições detalhadas têm mais chance de aprovação, porque facilitam a compreensão das mudanças pelos revisores.                                                                              |
 | IH04 | PRs com mais interações (comentários, discussões) tendem a ter maior chance de aprovação, pois mostram engajamento e refinamento colaborativo, embora discussões excessivas possam indicar conflitos. |
 
-#### 2. Número de Revisões:
+#### 2.2.2. Número de Revisões:
 
 | IH   | Descrição                                                                                                                            |
 | ---- | ------------------------------------------------------------------------------------------------------------------------------------ |
@@ -63,11 +63,31 @@ As **Hipóteses Informais** foram elaboradas a partir das RQs, estabelecendo exp
 
 ## 3. Tecnologias e ferramentas utilizadas
 
-- **💻 Linguagem de Programação:** Python 3.x
-- **🛠 Frameworks/Bibliotecas:** GraphQL
-- **🌐 APIs utilizadas:** GitHub GraphQL API
-- **📦 Dependências:** `pandas`, `matplotlib`, `seaborn`, `gitpython`, `requests`, `keyring`, `tqdm`
+- **Linguagem de Programação:** Python 3.x
+- **Frameworks/Bibliotecas:** GraphQL
+- **APIs utilizadas:** GitHub GraphQL API
+- **Dependências:** `pandas`, `matplotlib`, `seaborn`, `gitpython`, `requests`, `keyring`, `tqdm`
 
+### Configuração de Ambiente
+
+1. Gere seu token em  
+   `Settings > Developer Settings > Personal Access Tokens`
+2. Exporte o token como variável de ambiente:
+   ```bash
+   export GITHUB_TOKEN=seu_token_aqui
+   ```
+3. Instale as dependências:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Execute o script:
+   ```bash
+   cd code
+   python collector.py
+   python summarizer.py
+   python analyzer.py
+   ```
+   
 ---
 
 ## 4. Metodologia
@@ -187,7 +207,7 @@ Foram aplicadas etapas de pré-processamento:
 
 ### 4.4 Métricas
 
-#### 📊 Métricas de Laboratório - Lab Metrics (LM)
+#### Métricas de Laboratório - Lab Metrics (LM)
 
 | Código   | Métrica                           | Descrição                                                                   |
 | -------- | --------------------------------- | --------------------------------------------------------------------------- |
@@ -198,7 +218,7 @@ Foram aplicadas etapas de pré-processamento:
 | **LM05** | Número de Reviews                 | Quantidade total de revisões (reviews) realizadas                           |
 | **LM06** | Resultado final (mergeado/closed) | Estado final da revisão (MERGED, CLOSED, etc.)                              |
 
-#### 💡 Métricas adicionais trazidas pelo grupo - Additional Metrics (AM)
+#### Métricas adicionais trazidas pelo grupo - Additional Metrics (AM)
 
 | Código | Métrica                    | Descrição                                                |
 | ------ | -------------------------- | -------------------------------------------------------- |
@@ -221,7 +241,7 @@ As **Questões de Pesquisa (Research Questions – RQs)** foram associadas a mé
 
 A tabela a seguir apresenta a relação entre cada questão de pesquisa e as métricas utilizadas para sua avaliação:
 
-**🔍 Relação das RQs com Métricas:**
+**Relação das RQs com Métricas:**
 
 | RQ   | Pergunta                                                                           | Métrica utilizada                   | Código da Métrica |
 | ---- | ---------------------------------------------------------------------------------- | ----------------------------------- | ----------------- |
@@ -234,11 +254,11 @@ A tabela a seguir apresenta a relação entre cada questão de pesquisa e as mé
 | RQ07 | Qual a relação entre a descrição dos PRs e o número de revisões realizadas?        | Descrição, Número de Reviews        | LM03, LM05        |
 | RQ08 | Qual a relação entre as interações nos PRs e o número de revisões realizadas?      | Interações, Número de Reviews       | LM04, LM05        |
 
-### 4.8. Cálculo de Métricas e Análise Estatística
+### 4.7. Cálculo de Métricas e Análise Estatística
 
 As métricas foram extraídas e transformadas conforme definido na seção 4.4, incluindo contagens, proporções e índices compostos de popularidade. Além disso, calculamos estatísticas descritivas (média, mediana, moda, min, max, variância, desvio padrão) para todas as métricas. Para investigar relações entre variáveis, aplicamos o teste de correlação de Spearman, por ser robusto para dados não paramétricos e menos sensível a outliers.
 
-> 💡 **Nota:** Para melhor compreensão dos resultados, consulte os gráficos disponíveis na pasta `docs/charts/`:
+> **Nota:** Para melhor compreensão dos resultados, consulte os gráficos disponíveis na pasta `docs/charts/`:
 >
 > - `correlation_heatmap.png` - Visualização geral de todas as correlações
 > - `correlation_bars.png` - Comparação visual entre grupos de RQs
@@ -247,7 +267,7 @@ As métricas foram extraídas e transformadas conforme definido na seção 4.4, 
 > - `scatter_correlations.png` - Relações entre variáveis
 > - `summary_dashboard.png` - Dashboard completo com todas as descobertas
 
-#### 4.4.1. Estatísticas Descritivas Gerais
+#### 4.7.1. Estatísticas Descritivas Gerais
 
 Analisamos **947.735 Pull Requests**, distribuídos da seguinte forma:
 
@@ -271,11 +291,11 @@ Analisamos **947.735 Pull Requests**, distribuídos da seguinte forma:
 - O tamanho do PR é similar entre mergeado e não mergeado (diferença de apenas 2 linhas na mediana)
 - Descrições de PRs não mergeados são ligeiramente mais longas (340 vs 318 caracteres)
 
-#### 4.4.2. Análise de Correlações
+#### 4.7.2. Análise de Correlações
 
 Todas as correlações reportadas são estatisticamente significantes (p < 0.001) devido ao grande tamanho amostral.
 
-> 📊 **Visualização:** Veja `correlation_heatmap.png` e `correlation_bars.png` para uma representação visual completa das correlações.
+> **Visualização:** Veja `correlation_heatmap.png` e `correlation_bars.png` para uma representação visual completa das correlações.
 
 **RQ01: Tamanho do PR vs Feedback Final**
 
@@ -436,7 +456,7 @@ _<p style="text-align:center;">Comparação das medianas entre PRs mergeadas e n
 **5 Painéis:**
 
 - Tamanho do PR
-- Tempo de Análise ⚠️ **MAIOR DIFERENÇA** (4.4x)
+- Tempo de Análise **MAIOR DIFERENÇA** (4.4x)
 - Tamanho da Descrição
 - Interações
 - Número de Revisões
@@ -469,7 +489,7 @@ Como interpretar:
 
 **4 Painéis:**
 
-- **Interações × Revisões** (ρ = 0.58) ⭐ **Correlação mais forte**
+- **Interações × Revisões** (ρ = 0.58) **Correlação mais forte**
 - Tempo × Revisões (ρ = 0.35)
 - Tamanho × Revisões (ρ = 0.34)
 - Tempo × Status (histograma comparativo)
@@ -594,25 +614,17 @@ Esta é a **correlação mais forte** encontrada em todo o estudo. Hipótese **f
 ### Principais Descobertas
 
 1. **Tamanho não importa (para merge):** Contrariando a sabedoria convencional, o tamanho do PR tem impacto negligível na aprovação
-
 2. **Tempo é o fator crítico:** O tempo de análise é o melhor preditor de rejeição (ρ = -0.26)
-
 3. **Interações duplo-papel:** Interações predizem tanto rejeição (ρ = -0.25) quanto mais revisões (ρ = 0.58)
-
 4. **Descrição superestimada:** O tamanho da descrição tem efeito mínimo em ambos os resultados
-
 5. **Ciclo virtuoso/vicioso:** PRs entram em ciclos onde mais tempo → mais revisões → mais interações → menor chance de merge
 
 ### Limitações do Estudo
 
 1. **Causalidade:** Correlações não implicam causalidade. Pode haver variáveis confundidoras não medidas.
-
 2. **Heterogeneidade:** Diferentes projetos têm culturas de revisão diferentes, não capturadas na análise agregada.
-
 3. **Métricas proxy:** "Interações" como comentários pode não capturar toda a complexidade do processo de revisão.
-
 4. **Viés de seleção:** Repositórios populares podem não representar o desenvolvimento de software em geral.
-
 5. **Dados temporais:** Não analisamos tendências temporais ou sazonalidade.
 
 ### Implicações Práticas
@@ -637,7 +649,7 @@ Esta é a **correlação mais forte** encontrada em todo o estudo. Hipótese **f
 - Defina Acordos de Nível de Serviço (SLAs) para o tempo máximo de resposta dos revisores, promovendo previsibilidade e engajamento.
 - Acompanhe PRs com volume elevado de interações, pois podem sinalizar conflitos de comunicação ou necessidade de mediação técnica.
 
-### 6. Conclusão
+### 7. Conclusão
 
 Este estudo analisou 947.735 Pull Requests para identificar fatores que influenciam o sucesso e a eficiência do processo de code review. Utilizando o coeficiente de correlação de Spearman, encontramos evidências que desafiam algumas crenças comuns:
 
@@ -666,7 +678,7 @@ Todos os gráficos estão disponíveis em `docs/charts/`.
 
 ---
 
-## 7. Referências
+## 8. Referências
 
 Liste as referências bibliográficas ou links utilizados.
 
@@ -675,7 +687,7 @@ Liste as referências bibliográficas ou links utilizados.
 
 ---
 
-## 8. Apêndices
+## 9. Apêndices
 
 Todos os dados, scripts e análises estão disponíveis no repositório:
 
@@ -684,32 +696,3 @@ Todos os dados, scripts e análises estão disponíveis no repositório:
 - **Código de análise:** `code/analyzer.py`
 - **Dados brutos:** `code/datasets/`
 - **Resultados:** `code/results/`
-
-### 8.1. Configuração
-
-1. Gere seu token em  
-   `Settings > Developer Settings > Personal Access Tokens`
-2. Exporte o token como variável de ambiente:
-   ```bash
-   export GITHUB_TOKEN=seu_token_aqui
-   ```
-3. Instale as dependências:
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. Execute o script:
-   ```bash
-   cd code
-   python collector.py
-   python summarizer.py
-   python analyzer.py
-   ```
-
----
-
-**Documento gerado em:** 16 de Outubro de 2025  
-**Total de PRs analisados:** 947.735  
-**Método estatístico:** Correlação de Spearman  
-**Nível de significância:** α = 0.05
-
----
