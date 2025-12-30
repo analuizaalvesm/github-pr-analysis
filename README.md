@@ -32,8 +32,7 @@ As **Questões de Pesquisa** foram definidas para guiar a investigação e estru
 | RQ          | Pergunta                                                                      |
 | ----------- | ----------------------------------------------------------------------------- |
 | **RQ05**    | Qual a relação entre o tamanho dos PRs e o número de revisões realizadas?     |
-| **RQ06**    | Qual a relação entre o tempo de análise dos PRs e o número de revisões        |
-| realizadas? |
+| **RQ06**    | Qual a relação entre o tempo de análise dos PRs e o número de revisões realizadas?        |
 | **RQ07**    | Qual a relação entre a descrição dos PRs e o número de revisões realizadas?   |
 | **RQ08**    | Qual a relação entre as interações nos PRs e o número de revisões realizadas? |
 
